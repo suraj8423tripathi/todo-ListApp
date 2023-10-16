@@ -1,19 +1,13 @@
 import React from 'react'
-import { useDispatch } from 'react-redux';
-import {increaseCompletedTask,deleteItemsFromList} from '../utils/bodySlice'; 
+import { useState } from 'react'; 
  
 const AddTask = (props) => {
-  const dispatch = useDispatch();
-    const {task,bodyItems,id} = props;
+    const {task,id,completedTask,setCompletedTask,setTodoList,todoList} = props;
     const handleClick = () => {
-        dispatch(increaseCompletedTask());
-        dispatch(deleteItemsFromList(id));
+      setTodoList(todoList.filter(item => item.id !== id));
+      setCompletedTask(completedTask+1);
     }
     
-    if(bodyItems.length ===0)
-    {
-        
-    }
   return (
     <div className="addTask">
       <li>{task}</li>
