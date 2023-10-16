@@ -1,0 +1,11 @@
+.pendingAndconplete {
+  display: flex;
+  flex-direction: row;
+  gap: 100px; 
+}
+
+.addTask {
+  display: flex;
+  flex-direction: row;
+  gap: 30px; 
+}
